@@ -125,7 +125,7 @@ public class Calculator implements ActionListener {
         }
         // Check if the decimal button is clicked and append a decimal point to the text field
         if (e.getSource() == decButton) {
-            textField.setText(textField.getText().concat(String.valueOf(".")));
+            textField.setText(textField.getText().concat("."));
         }
         // Check if the addition button is clicked, save the current number and set operator to +
         if (e.getSource() == addButton) {
@@ -157,18 +157,10 @@ public class Calculator implements ActionListener {
             num2 = Double.parseDouble(textField.getText());
 
             switch (operator) {
-                case '+':
-                    result = num1 + num2;
-                    break;
-                case '-':
-                    result = num1 - num2;
-                    break;
-                case '*':
-                    result = num1 * num2;
-                    break;
-                case '/':
-                    result = num1 / num2;
-                    break;
+                case '+' -> result = num1 + num2;
+                case '-' -> result = num1 - num2;
+                case '*' -> result = num1 * num2;
+                case '/' -> result = num1 / num2;
             }
             textField.setText(String.valueOf(result));
             num1 = result;
